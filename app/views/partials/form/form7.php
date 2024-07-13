@@ -1,8 +1,8 @@
 <div class="row">
     <div class="col-2">
         <div class="mb-3">
-            <label for="raca" class="form-label">Calssificar por</label>
-            <select class="form-select form-select-sm filter-input" id="raca" aria-label="Selecione a Raça">
+            <label for="classification" class="form-label">Calssificar por</label>
+            <select class="form-select form-select-sm filter-input" id="classification" aria-label="Classificar por">
                 <option value=""></option>
                 <option value="0">Identificação</option>
                 <option value="1">Nome</option>
@@ -56,8 +56,8 @@
     </div>
     <div class="col-3">
         <div class="mb-3">
-            <label for="central" class="form-label">Em Ordem</label>
-            <select class="form-select form-select-sm filter-input" id="raca2" aria-label="Todas as Centrais">
+            <label for="order" class="form-label">Em Ordem</label>
+            <select class="form-select form-select-sm filter-input" id="racordera2" aria-label="Em Ordem">
                 <option value="Desc">Decrescente</option>
                 <option value="Asc">Crescente</option>
             </select>
@@ -65,8 +65,8 @@
     </div>
     <div class="col-3">
         <div class="mb-3">
-            <label for="raca3" class="form-label">Número de Animais por Página</label>
-            <select class="form-select form-select-sm filter-input" id="raca3" aria-label="Selecione a Raça">
+            <label for="num-animal-page" class="form-label">Número de Animais por Página</label>
+            <select class="form-select form-select-sm filter-input" id="num-animal-page" aria-label="Número de Animais por Página">
                 <option value="15">15</option>
                 <option value="25">25</option>
                 <option value="50">50</option>

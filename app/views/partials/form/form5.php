@@ -40,16 +40,16 @@
                                 </div>
                             </td>
                             <td class="Min_f">
-                                <input name="FILTRO[DEP][20][1][MIN]" id="MGT_Min" type="text" class="form" value="" size="2" maxlength="10" spellcheck="false" data-ms-editor="true">
+                                <input name="[DEPmgt][20][1][MIN]" id="MGT_Min" type="text" class="form" value="" size="2" maxlength="10" spellcheck="false" data-ms-editor="true">
                             </td>
                             <td class="Max_f">
                                 <input name="FILTRO[DEP][20][1][MAX]" id="MGT_Max" type="text" class="form" value="" size="2" maxlength="10" spellcheck="false" data-ms-editor="true">
                             </td>
                             <td class="Acur. Min(%)_f">
-                                <input name="FILTRO[DEP][20][2][ACC_MIN]" id="MGT_Acur. Min(%)" type="text" class="form" value="" size="2" maxlength="10" spellcheck="false" data-ms-editor="true">
+                                <input name="[DEPmgt][20][2][ACC_MIN]" id="MGT_Acur. Min(%)" type="text" class="form" value="" size="2" maxlength="10" spellcheck="false" data-ms-editor="true">
                             </td>
                             <td>
-                                <select name="FILTRO[DEP][20][1][TOP]" size="1" class="form" id="MGT_Top" style="width:55px">
+                                <select name="[DEPmgt][20][1][TOP]" size="1" class="form" id="MGT_Top" style="width:55px">
                                     <option value=""></option>
                                     <option value="1">
                                         0.1% </option>

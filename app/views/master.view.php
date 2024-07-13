@@ -9,22 +9,19 @@ require VIEWS_PATH . 'partials/header.view.php';
 <body>
     <div class="default-container container master-view-container">
         <h2 class="master-view-title mb-5"><?php echo $title ?></h2>
-        <?php require VIEWS_PATH . $routedView ?>
+        <div class="container">
+            <div class="form-container mb-5">
+                <div class="filter-title-container">
+                    <div class="d-flex align-items-center flex-column">
+                        <p class="px-5 py-1"><?php echo $secondTitle ?></p>
+                    </div>
+                </div>
+                <?php require VIEWS_PATH . $routedView ?>
+            </div>
+        </div>
     </div>
 </body>
 
 <?php require VIEWS_PATH . 'partials/footer.view.php'; ?>
 
 </html>
-
-<style>
-    .master-view-title {
-        font-weight: 700;
-        margin-left: 20px;
-    }
-
-    .master-view-container {
-        padding-top: 40px;
-        min-height: 60vh;
-    }
-</style>

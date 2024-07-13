@@ -13,7 +13,7 @@
             <div class="col-1">
                 <div class="mb-3">
                     <label for="rgn" class="form-label">RGN</label>
-                    <input type="text" class="form-control form-control-sm filter-input py-0 ps-2 pe-0" id="rgn" placeholder="" name="rgn"
+                    <input type="text" class="form-control form-control-sm filter-input py-0 ps-2 pe-0" id="rgn" placeholder="" name="rgn">
                 </div>
             </div>
             <div class="col-1">

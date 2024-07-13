@@ -22,5 +22,5 @@ try {
     // Carrega a view principal da aplicação.
     require VIEWS_PATH . 'master.view.php';
 } catch (Exception $e) {
-    handleAppError($e);
+    handleAppError($e, null);
 }

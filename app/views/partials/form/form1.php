@@ -2,8 +2,8 @@
     <div class="col-3">
         <div class="mb-3">
             <label for="raca" class="form-label">Raça</label>
-            <select class="form-select form-select-sm filter-input" id="raca" aria-label="Selecione a Raça" name="raca">
-                <option selected>Selecione a Raça</option>
+            <select class="form-select form-select-sm filter-input" id="raca" name="raca" aria-label="Selecione a Raça" >
+                <option value="" disabled selected>Selecione a Raça</option>
                 <option value="1">Nelore</option>
                 <option value="2">Guzerá</option>
                 <option value="3">Brahman</option>
@@ -11,12 +11,15 @@
                 <option value="5">Nelore CL</option>
             </select>
         </div>
+        <div class="invalid-feedback">
+            Por favor, selecione uma raça válida.
+        </div>
     </div>
     <div class="col-3">
         <div class="mb-3">
             <label for="central" class="form-label">Central</label>
             <select class="form-select form-select-sm filter-input" id="central" aria-label="Todas as Centrais" name="central">
-                <option selected></option>
+                <option selected value=""></option>
                 <option value="-1">Todas as Centrais</option>
                 <option value="1">ABS</option>
                 <option value="2">Alta Genetics</option>

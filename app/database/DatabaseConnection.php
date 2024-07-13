@@ -27,8 +27,7 @@ class DatabaseConnection
       try {
          $this->pdo = new PDO($dsn, $config['user'], $config['password'], $options);
       } catch (PDOException $e) {
-         echo "Erro ao conectar com o banco de dados: " . $e->getMessage();
-         return null;
+         handleAppError(null, $e);
       }
    }
 

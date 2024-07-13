@@ -9,7 +9,8 @@ class FilterController
         return [
             'view' => 'filter.view.php',
             'data' => [
-                'title' => 'Consulta Pública de Machos Jovens e Touros'
+                'title' => 'Consulta Pública de Machos Jovens e Touros',
+                'secondTitle' => 'Consultar Animais'
             ]
         ];
     }

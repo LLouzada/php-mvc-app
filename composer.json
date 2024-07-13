@@ -11,6 +11,7 @@
         },
         "files": [
             "app/helpers/constants.php",
+            "app/helpers/queryPrepare.php",
             "app/router/router.php",
             "app/core/controller.php"
         ]

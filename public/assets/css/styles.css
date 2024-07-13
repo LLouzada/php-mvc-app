@@ -126,6 +126,18 @@ li.nav-item {
 
 /* END FOOTER */
 
+/* MASTER VIEW */
+
+.master-view-title {
+    font-weight: 700;
+    margin-left: 20px;
+}
+
+.master-view-container {
+    padding-top: 40px;
+    min-height: 60vh;
+}
+
 /* FILTER VIEW */
 
 .form-container {
