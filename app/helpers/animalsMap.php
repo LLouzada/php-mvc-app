@@ -40,5 +40,20 @@ return [
         '29' => 'Premium Gen - Pecuária Sustentável',
         '30' => 'Central Uberaba',
         '31' => 'AG Brasil'
+    ],
+    'rp' => [
+        '-1' => 'Todas as Reproduções Programadas',
+        '2024' => 'Participante em: 2024',
+        '2023' => 'Participante em: 2023',
+        '2022' => 'Participante em: 2022',
+        '2021' => 'Participante em: 2021',
+        '2020' => 'Participante em: 2020',
+        '2019' => 'Participante em: 2019',
+        '2018' => 'Participante em: 2018',
+        '2017' => 'Participante em: 2017',
+        '2016' => 'Participante em: 2016',
+        '2015' => 'Participante em: 2015',
+        '2014' => 'Participante em: 2014',
+        '2013' => 'Participante em: 2013'
     ]
 ];

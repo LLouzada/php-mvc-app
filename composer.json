@@ -7,11 +7,11 @@
             "App\\": "app",
             "App\\Database\\": "app/database/",
             "App\\Controllers\\": "app/controllers/",
-            "App\\Models\\": "app/models/"
+            "App\\Models\\": "app/models/",
+            "App\\Helpers\\": "app/helpers/"
         },
         "files": [
             "app/helpers/constants.php",
-            "app/helpers/queryPrepare.php",
             "app/router/router.php",
             "app/core/controller.php"
         ]

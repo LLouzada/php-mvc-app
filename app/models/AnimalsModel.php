@@ -2,13 +2,15 @@
 
 namespace App\models;
 
+use PDO;
+use App\helpers\PrepareQuery;
 use App\Database\DatabaseConnection;
 
 class AnimalsModel
 {
     private $pdo;
-    private $table = 'consulta_publica';
-    
+    private string $table = 'consulta_publica';
+
 
     public function __construct()
     {
@@ -21,19 +23,29 @@ class AnimalsModel
 
     public function getFilteredResults($requestData)
     {
-        $query = prepareFilterQuery($requestData, $this->table, $this->pdo);
-
-        if ($query === "404") {
+        $prepare = new PrepareQuery();
+        if ($prepare === "404") {
             return $this->notFound();
         }
 
-        if (isset($requestData['central']) && !empty($requestData['central'])) {
-            $central = $requestData['central'];
-            $stmt->bindParam(':central', $central);
+        $prepareResult = $prepare->prepareFilterQuery($requestData, $this->table, $this->pdo);
+
+        var_dump($prepareResult);
+        die();
+
+        $stmt = $this->pdo->prepare($prepareResult['query']);
+
+        // Bind params
+        foreach ($prepareResult['queryParams'] as $key => $value) {
+            $stmt->bindParam(":$key", $value);
         }
 
-        $stmt->execute();
-        
+        $result = $stmt->execute();
+        if (!$result) {
+            return $this->notFound();
+        }
+
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function getDetail($id)
