@@ -9,12 +9,12 @@
                     <label for="categoria" class="form-label">Categoria</label>
                     <select class="form-select form-select-sm filter-input" id="categoria" aria-label="Selecione a Raça" name="categoria">
                         <option value="">Todas</option>
-                        <option value="CL">CL</option>
-                        <option value="LA">LA</option>
-                        <option value="PA">PA</option>
-                        <option value="PC">PC</option>
-                        <option value="PO">PO</option>
-                        <option value="PI">PI</option>
+                        <option value="1">CL</option>
+                        <option value="2">LA</option>
+                        <option value="3">PA</option>
+                        <option value="4">PC</option>
+                        <option value="5">PO</option>
+                        <option value="6">PI</option>
                     </select>
                 </div>
                 <div class="mb-3">

@@ -1,5 +1,4 @@
 <form id="myForm" action="/animais-filtrados" method="POST">
-    <hr class="custom-hr mb-2 mt-2">
 
     <?php include VIEWS_PATH . 'partials/form/form1.php' ?>
 

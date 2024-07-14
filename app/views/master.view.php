@@ -16,6 +16,7 @@ require VIEWS_PATH . 'partials/header.view.php';
                         <p class="px-5 py-1"><?php echo $secondTitle ?></p>
                     </div>
                 </div>
+                <hr class="custom-hr mb-2 mt-2">
                 <?php require VIEWS_PATH . $routedView ?>
             </div>
         </div>

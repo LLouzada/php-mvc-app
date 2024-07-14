@@ -145,6 +145,7 @@ li.nav-item {
     border: 1px solid #ccc;
     border-radius: 8px;
     background-color: rgba(234,237,240,0.9);
+    min-height: 0vh;
 }
 
 .filter-title-container {
@@ -171,4 +172,18 @@ li.nav-item {
 
 strong {
     font-size: 12px;
+}
+
+.result-table-hd-text {
+    background-color: rgba(0, 144, 212, 0.75);
+    color: #fff;
+    font-size: 10px;
+}
+
+.result-table-row-light {
+    background-color: #f9f9f9;
+}
+
+.result-table-row-dark {
+    background-color: #e8e8e8;
 }

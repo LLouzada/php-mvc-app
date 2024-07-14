@@ -10,24 +10,24 @@
             
                 <div class="row">
                     <div class="col-1">
-                    <label for="serie" class="form-label">pai:</label>
+                    <label class="form-label">pai:</label>
                     </div>
                     <div class="col-2">
                         <div class="mb-3">
                             <label for="p-serie" class="form-label">Série</label>
-                            <input type="text" class="form-control form-control-sm filter-input py-0 ps-2 pe-0" id="p-serie" placeholder="" name="p-serie">
+                            <input type="text" class="form-control form-control-sm filter-input py-0 ps-2 pe-0" id="p-serie" placeholder="" name="p-serie" maxlength="8">
                         </div>
                     </div>
                     <div class="col-2">
                         <div class="mb-3">
                             <label for="p-rgn" class="form-label">RGN</label>
-                            <input type="text" class="form-control form-control-sm filter-input py-0 ps-2 pe-0" id="p-rgn" placeholder="" name="p-rgn">
+                            <input type="text" class="form-control form-control-sm filter-input py-0 ps-2 pe-0" id="p-rgn" placeholder="" name="p-rgn" maxlength="8">
                         </div>
                     </div>
                     <div class="col-2">
                         <div class="mb-3">
                             <label for="p-rgd" class="form-label">RGD</label>
-                            <input type="text" class="form-control form-control-sm filter-input py-0 ps-2 pe-0" id="p-rgd" placeholder="" name="p-rgd">
+                            <input type="text" class="form-control form-control-sm filter-input py-0 ps-2 pe-0" id="p-rgd" placeholder="" name="p-rgd" maxlength="8">
                         </div>
                     </div>
                 </div>
@@ -37,24 +37,24 @@
             <div class="col-6">
                 <div class="row">
                 <div class="col-1">
-                    <label for="serie" class="form-label">mãe:</label>
+                    <label class="form-label">mãe:</label>
                     </div>
                     <div class="col-2">
                         <div class="mb-3">
                             <label for="m-serie" class="form-label">Série</label>
-                            <input type="text" class="form-control form-control-sm filter-input py-0 ps-2 pe-0" id="m-serie" placeholder="" name="m-serie">
+                            <input type="text" class="form-control form-control-sm filter-input py-0 ps-2 pe-0" id="m-serie" placeholder="" name="m-serie" maxlength="8">
                         </div>
                     </div>
                     <div class="col-2">
                         <div class="mb-3">
                             <label for="m-rgn" class="form-label">RGN</label>
-                            <input type="text" class="form-control form-control-sm filter-input py-0 ps-2 pe-0" id="m-rgn" placeholder="" name="m-rgn">
+                            <input type="text" class="form-control form-control-sm filter-input py-0 ps-2 pe-0" id="m-rgn" placeholder="" name="m-rgn" maxlength="8">
                         </div>
                     </div>
                     <div class="col-2">
                         <div class="mb-3">
                             <label for="m-rgd" class="form-label">RGD</label>
-                            <input type="text" class="form-control form-control-sm filter-input py-0 ps-2 pe-0" id="m-rgd" placeholder="" name="m-rgd">
+                            <input type="text" class="form-control form-control-sm filter-input py-0 ps-2 pe-0" id="m-rgd" placeholder="" name="m-rgd" maxlength="8">
                         </div>
                     </div>
                 </div>

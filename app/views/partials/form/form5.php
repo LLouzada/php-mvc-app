@@ -2,7 +2,7 @@
     <div class="col-12">
         <label for="busca-por-deps" class="form-label" style="cursor: pointer;" data-bs-toggle="collapse" data-bs-target="#form5-container"><strong class="me-2">por DEPs</strong><i class="fa-solid fa-caret-down"></i></label>
     </div>
-
+    
     <div class="collapse" id="form5-container">
         <div class="row">
             <div class="col-md-4">
@@ -36,7 +36,7 @@
                         <tr class="mgt_f">
                             <td height="0" align="right">
                                 <div align="center" class="DEP_AG" id="id_mgt">
-                                    <font size="2"><a href="#mgt" title="mgt">MGT</a></font>
+                                    <font size="2">MGT
                                 </div>
                             </td>
                             <td class="Min_f">

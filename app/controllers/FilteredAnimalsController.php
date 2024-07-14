@@ -8,23 +8,32 @@ class FilteredAnimalsController
 {
     public function filter()
     {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $requestData = $_POST;
-
-            $model = new AnimalsModel();
-            $filteredResults = $model->getFilteredResults($requestData);
-
+        // todo - implementar paginação aqui
+        if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             return [
                 'view' => 'filter.view.php',
                 'data' => [
-                    'title' => 'Consulta Pública de Machos Jovens e Touros',
-                    'secondTitle' => 'Animais Filtrados',
-                    'success' => true,
-                    'filteredResults' => $filteredResults
+                    'title' => 'Consulta de Touros',
+                    'secondTitle' => 'Filtros de Consulta'
                 ]
             ];
         }
-    }
 
-   
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            // if (!isset($_POST['pagination'])) {
+            //     return [
+            //         'view' => 'filter.view.php',
+            //         'data' => [
+            //             'title' => 'Consulta de Touros',
+            //             'secondTitle' => 'Filtros de Consulta',
+            //             'error' => 'Favor preencher os campos de filtro'
+            //         ]
+            //     ];
+            // }
+            $requestData = $_POST;
+
+            $model = new AnimalsModel();
+            return $model->getFilteredResults($requestData);
+        }
+    }
 }

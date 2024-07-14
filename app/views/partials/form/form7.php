@@ -2,8 +2,7 @@
     <div class="col-2">
         <div class="mb-3">
             <label for="classification" class="form-label">Calssificar por</label>
-            <select class="form-select form-select-sm filter-input" id="classification" aria-label="Classificar por">
-                <option value=""></option>
+            <select class="form-select form-select-sm filter-input" id="classification" aria-label="Classificar por" name="classification">
                 <option value="0">Identificação</option>
                 <option value="1">Nome</option>
                 <option value="2">Sexo</option>
@@ -57,7 +56,7 @@
     <div class="col-3">
         <div class="mb-3">
             <label for="order" class="form-label">Em Ordem</label>
-            <select class="form-select form-select-sm filter-input" id="racordera2" aria-label="Em Ordem">
+            <select class="form-select form-select-sm filter-input" id="racordera2" aria-label="Em Ordem" name="order">
                 <option value="Desc">Decrescente</option>
                 <option value="Asc">Crescente</option>
             </select>
@@ -65,8 +64,8 @@
     </div>
     <div class="col-3">
         <div class="mb-3">
-            <label for="num-animal-page" class="form-label">Número de Animais por Página</label>
-            <select class="form-select form-select-sm filter-input" id="num-animal-page" aria-label="Número de Animais por Página">
+            <label for="limit" class="form-label">Número de Animais por Página</label>
+            <select class="form-select form-select-sm filter-input" id="limit" aria-label="Número de Animais por Página" name="limit">
                 <option value="15">15</option>
                 <option value="25">25</option>
                 <option value="50">50</option>

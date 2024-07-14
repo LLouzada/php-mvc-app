@@ -21,48 +21,99 @@ class AnimalsModel
         validateDbConnection($this->pdo);
     }
 
-    public function getFilteredResults($requestData)
+    public function getFilteredResults(array $requestData)
     {
         $prepare = new PrepareQuery();
-        if ($prepare === "404") {
+        $resultOfQueryPrepare = $prepare->prepareFilterQuery($requestData, $this->table, $this->pdo);
+
+        if ($resultOfQueryPrepare === "404") {
             return $this->notFound();
         }
 
-        $prepareResult = $prepare->prepareFilterQuery($requestData, $this->table, $this->pdo);
+        validateResultOfQueryPrepare($resultOfQueryPrepare);
 
-        var_dump($prepareResult);
-        die();
+        // var_dump($resultOfQueryPrepare);
+        // die();
 
-        $stmt = $this->pdo->prepare($prepareResult['query']);
-
-        // Bind params
-        foreach ($prepareResult['queryParams'] as $key => $value) {
-            $stmt->bindParam(":$key", $value);
-        }
-
-        $result = $stmt->execute();
-        if (!$result) {
+        $resultMainQuery = $this->runMainQuery($resultOfQueryPrepare);
+        if (empty($resultMainQuery) || $resultMainQuery === "404") {
             return $this->notFound();
         }
 
-        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $resultCountQuery = $this->runCountQuery($resultOfQueryPrepare);
+
+        // var_dump($resultMainQuery);
+        // var_dump($resultCountQuery);
+        // die();
+
+        return [
+            'view' => 'filteredAnimals.view.php',
+            'data' => [
+                'title' => 'Consulta Pública de Machos Jovens e Touros',
+                'secondTitle' => 'Animais Filtrados - Consulta Avaliação Genética',
+                'success' => true,
+                'filteredResults' => $resultMainQuery,
+                'countResults' => $resultCountQuery,
+                'mainQuery' => $resultOfQueryPrepare['query'],
+                'mainQueryParams' => $resultOfQueryPrepare['queryParams'],
+                'countQuery' => $resultOfQueryPrepare['countQuery'],
+                'countQueryParams' => $resultOfQueryPrepare['countQueryParams'],
+                'limit' => (int) $requestData['limit'],
+                'offset' => 0,
+                'classification' => $resultOfQueryPrepare['classification'],
+            ]
+        ];
     }
 
-    public function getDetail($id)
+    /**
+     * Executa a query principal.
+     * 
+     * @param array $resultOfQueryPrepare
+     * @return array
+     */
+    private function runMainQuery(array $resultOfQueryPrepare)
     {
-        // $stmt = $this->pdo->prepare("SELECT * FROM your_table WHERE id = :id");
-        // $stmt->execute(['id' => $id]);
-        // return $stmt->fetch(PDO::FETCH_ASSOC);
+        $mainStmt = $this->pdo->prepare($resultOfQueryPrepare['query']);
+        foreach ($resultOfQueryPrepare['queryParams'] as $key => $value) {
+            $mainStmt->bindValue(":$key", $value);
+        }
 
-        // $stmt = $this->pdo->prepare("SELECT * FROM your_table WHERE your_column LIKE :filter");
-        // $stmt->execute(['filter' => '%' . $filter . '%']);
-        // return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        if (!$mainStmt->execute()) {
+            return '404';
+        }
+
+        return $mainStmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    private function notFound()
+    /**
+     * Executa a query de contagem.
+     * 
+     * @param array $resultOfQueryPrepare
+     * @return array
+     */
+    private function runCountQuery(array $resultOfQueryPrepare)
+    {
+        $countStmt = $this->pdo->prepare($resultOfQueryPrepare['countQuery']);
+        foreach ($resultOfQueryPrepare['countQueryParams'] as $key => $value) {
+            $countStmt->bindValue(":$key", $value);
+        }
+
+        if (!$countStmt->execute()) {
+            return '404';
+        }
+
+        return $countStmt->fetch(PDO::FETCH_ASSOC);
+    }
+
+    /**
+     * Retorna uma mensagem de erro caso a query não retorne resultados.
+     * 
+     * @return array
+     */
+    private function notFound(): array
     {
         return [
-            'view' => 'filter.view.php',
+            'view' => 'filteredAnimals.view.php',
             'data' => [
                 'title' => 'Consulta Pública de Machos Jovens e Touros',
                 'secondTitle' => 'Animais Filtrados',
