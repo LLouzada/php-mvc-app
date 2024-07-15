@@ -87,3 +87,14 @@ if (!$success) {
     <input type="hidden" name="numberPages" id="numberPages" value="<?php echo htmlspecialchars($numberPages); ?>">
     <input type="hidden" name="countResults" id="countResults" value="<?php echo htmlspecialchars($countResultsFinal); ?>">
 </form>
+
+<form id="animalDetailsForm" action="/detalhes-do-animal" method="POST" style="display: none;">
+    <input type="hidden" name="mainQuery" id="mainQuery" value="<?php echo htmlspecialchars($mainQuery); ?>">
+    <input type="hidden" name="mainQueryParams" id="mainQueryParams" value='<?php echo htmlspecialchars(json_encode($mainQueryParams)); ?>'>
+    <input type="hidden" name="limit" id="limit" value="<?php echo htmlspecialchars($limit); ?>">
+    <input type="hidden" name="offset" id="offset" value="<?php echo htmlspecialchars($offset); ?>">
+    <input type="hidden" name="currentPage" id="currentPage" value="<?php htmlspecialchars($currentPage); ?>">
+    <input type="hidden" name="numberPages" id="numberPages" value="<?php echo htmlspecialchars($numberPages); ?>">
+    <input type="hidden" name="countResults" id="countResults" value="<?php echo htmlspecialchars($countResultsFinal); ?>">
+    <input type="hidden" name="animalId" id="animalId" value="">
+</form>

@@ -21,7 +21,7 @@ class AnimalsModel
         validateDbConnection($this->pdo);
     }
 
-    public function getFilteredResults(array $requestData, bool $isPagination = false)
+    public function getFilteredResults(array $requestData, bool $isPagination = false, bool $isDetails = false)
     {
         $prepare = new PrepareQuery();
 
@@ -65,6 +65,43 @@ class AnimalsModel
                     'offset' => $offset,
                     'currentPage' => $requestData['currentPage'],
                     'pagination' => true
+                ]
+            ];
+        }
+
+        if ($isDetails) {
+            $animalId = $requestData['animalId'];
+            $query = "SELECT * FROM {$this->table} WHERE id = :id";
+
+            $stmt = $this->pdo->prepare($query);
+            $stmt->bindValue(':id', $animalId);
+
+            if (!$stmt->execute()) {
+                return '404';
+            }
+
+            $resultMainQuery = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            
+            if (empty($resultMainQuery)) {
+                return $this->notFound();
+            }
+
+            return [
+                'view' => 'animalDetails.view.php',
+                'data' => [
+                    'title' => 'Consulta Pública de Machos Jovens e Touros',
+                    'secondTitle' => 'Ficha do Animal',
+                    'animalDetails' => $resultMainQuery,
+                    'success' => true,
+                    'mainQuery' => $requestData['mainQuery'],
+                    'mainQueryParams' => $requestData['mainQueryParams'],
+                    'limit' => $requestData['limit'],
+                    'offset' => $requestData['offset'],
+                    'currentPage' => $requestData['currentPage'],
+                    'numberPages' => $requestData['numberPages'],
+                    'countResults' => $requestData['countResults']
+
                 ]
             ];
         }

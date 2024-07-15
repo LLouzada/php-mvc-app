@@ -16,4 +16,6 @@ return [
     '/test' => 'Test@index',
     '/animais-filtrados' => 'FilteredAnimals@filter',
     '/lucas/animais-filtrados' => 'FilteredAnimals@filter',
+    '/detalhes-do-animal' => 'AnimalDetails@details',
+    '/lucas/detalhes-do-animal' => 'AnimalDetails@details',
 ];

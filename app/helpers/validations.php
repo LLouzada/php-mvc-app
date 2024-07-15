@@ -25,6 +25,9 @@ function validateControllerData(array $routerData): void
     }
 
     if (isset($routerData['data']['success']) && $routerData['data']['success'] === true) {
+        if ($routerData['view'] === 'animalDetails.view.php') {
+            return;
+        }
         if (
             !isset($routerData['data']['filteredResults']) || !isset($routerData['data']['countResults']) || !isset($routerData['data']['mainQuery'])
             || !isset($routerData['data']['mainQueryParams']) || !isset($routerData['data']['limit']) || !isset($routerData['data']['offset'])

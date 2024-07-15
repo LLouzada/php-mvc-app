@@ -8,8 +8,14 @@
     </td>
     <td bgcolor="#FFFFFF">
         <div align="left">
-            <font color="#000000" size="-2"> <a href="#" onclick="ficha_animal(2416390,1);">
-                    <?php echo htmlspecialchars($animal['nome'] ?? 'nome não localizado'); ?> </a> </font>
+            <font color="#000000" size="-2"> <a href="#" onclick="openAnimalDetails(<?php echo htmlspecialchars($animal['id']); ?>)">
+                    <?php
+                    if (isset($animal['nome']) && empty($animal['nome'])) {
+                        echo htmlspecialchars('nome não localizado');
+                    } else {
+                        echo htmlspecialchars($animal['nome'] ?? 'nome não localizado');
+                    }
+                    ?>
         </div>
     </td>
     <td bgcolor="#FFFFFF" height="21">

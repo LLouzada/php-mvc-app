@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             //seto o valor do offset para o valor atual + limit
             offset = offset + limit;
-            
+
             //coloca o valor do offset no input
             document.getElementById('offset').value = offset;
 
@@ -179,26 +179,18 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
     }
-
-    function sendPaginationData(mainQuery, mainQueryParams, limit, offset, currentPage, countResults) {
-        $.ajax({
-            url: '/animais-filtrados',
-            type: 'POST',
-            data: {
-                mainQuery: mainQuery,
-                mainQueryParams: mainQueryParams,
-                limit: limit,
-                offset: offset,
-                currentPage: currentPage,
-                countResults: countResults
-            },
-            success: function (response) {
-                console.log(response);
-            },
-            error: function (xhr, status, error) {
-                console.error("Erro ao enviar dados: " + error);
-            }
-        });
-    }
 });
+
+function openAnimalDetails(animalId) {
+    console.log('openAnimalDetails');
+    console.log('animalId: ' + animalId);
+
+    //pego o form
+    var form = document.getElementById('animalDetailsForm');
+
+    //seto o valor do animalId
+    document.getElementById('animalId').value = animalId;
+    // submeto o formulário
+    form.submit();
+}
 

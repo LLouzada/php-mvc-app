@@ -8,7 +8,7 @@
     </td>
     <td bgcolor="#E8E8E8">
         <div align="left">
-            <font color="#000000" size="-2"> <a href="#" onclick="ficha_animal(1991378,1);">
+            <font color="#000000" size="-2"> <a href="#" onclick="openAnimalDetails(<?php echo htmlspecialchars($animal['id']); ?>)">
                     <?php
                     if (isset($animal['nome']) && empty($animal['nome'])) {
                         echo htmlspecialchars('nome não localizado');

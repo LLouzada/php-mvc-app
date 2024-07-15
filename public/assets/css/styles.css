@@ -187,3 +187,93 @@ strong {
 .result-table-row-dark {
     background-color: #e8e8e8;
 }
+
+/* DETAIL VIEW */
+
+.ficha_cabecalho_campo{
+	font-size:10px;
+	color: #000066;
+	background-color:#CCC;
+	font-family: montserrat;
+	text-align: center;
+	border-bottom:solid 1px #e8e8e8;
+}
+
+.ficha_cabecalho_campo_dep{
+    font-size:10px;
+    color: #000066;
+    background-color:#B9B9B9;
+    font-family: montserrat;
+    text-align: center;
+    border-bottom:solid 1px #CCC;
+    margin-top:5px;
+}
+
+.ficha_topico{
+	font-size:11px;
+	font-weight:bold;
+	color: #000066;
+	font-family: montserrat;
+}
+.ficha_texto_campo{
+	font-size:10px;
+	color: #444444;
+	font-family: montserrat;
+	text-align: center;
+	background-color:#F5F5F5;
+}
+.ficha_texto_campo_dep{
+    font-size:11px;
+    color: #444444;
+    font-family: montserrat;
+    text-align: center;
+    background-color:#d2d0d0;
+}
+.mgt_texto
+{
+	font-size:11px;
+	font-weight:bolder;
+	color: #ffffff;
+	font-family: montserrat;
+	text-align: center;
+	background-color:#006699;
+}
+
+.genealogia_texto_campo{
+	background:url(../../images/teste_1.jpg) no-repeat;
+	font-size:11px;
+	width:160px;
+	height:60px;
+	font-family: montserrat;
+	text-align: center;
+}
+
+.genealogia_texto_campo_f {
+	background:url(../../images/teste_3.jpg) no-repeat;
+	font-size:11px;
+	width:160px;
+	height:60px;
+	font-family: montserrat;
+	text-align: center;
+}
+
+.genealogia_texto_campo_m {
+	background:url(../../images/teste_2.jpg) no-repeat;
+	font-size:11px;
+	width:160px;
+	height:60px;
+	font-family: montserrat;
+	text-align: center;
+}
+
+.style1 {color: #003366}
+
+.borda_grupo{
+	border: thin ridge #ccc;
+	padding: 1px;
+	margin: 1px;
+}
+
+.borda_dep {
+	border:solid 1px #CCCCCC
+}
