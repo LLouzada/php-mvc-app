@@ -35,61 +35,170 @@ document.addEventListener('DOMContentLoaded', function () {
                 // Código para processamento adicional se necessário
             }
         }, false);
-    } else {
-        console.log('Formulário não encontrado!');
+    }
+
+    var filteredResultsContainer = document.getElementById('filtered-results');
+    if (filteredResultsContainer) {
+
+        console.log('filteredResultsContainer');
+        document.getElementById('first-page').addEventListener('click', function (e) {
+            e.preventDefault();
+
+            //pego o input de offset
+            var offset = document.getElementById('offset');
+
+            // pega currentPage
+            var currentPage = document.getElementById('currentPage').value;
+            if (parseInt(currentPage) == 1) {
+                return;
+            }
+            //seto o valor do offset para 0
+            offset.value = 0;
+
+            //seto a value do currentPage para 1
+            document.getElementById('currentPage').value = 1;
+
+            //pego o form
+            var form = document.getElementById('paginationForm');
+
+            // submeto o formulário
+            form.submit();
+        });
+
+        document.getElementById('previous-page').addEventListener('click', function (e) {
+            e.preventDefault();
+            //pego o input de offset
+            var offset = document.getElementById('offset').value
+            offset = parseInt(offset);
+
+            if (offset == 0) {
+                return;
+            }
+
+            // pega currentPage
+            var currentPage = document.getElementById('currentPage').value;
+            if (parseInt(currentPage) == 1) {
+                return;
+            }
+            // pega o valor do limit
+            var limit = document.getElementById('limit').value;
+            limit = parseInt(limit);
+
+            //seto o valor do offset para o valor atual - limit
+            offset = offset - limit;
+
+            //coloca o valor do offset no input
+            document.getElementById('offset').value = offset;
+
+            //seto a value do currentPage para o valor atual - 1
+            document.getElementById('currentPage').value = parseInt(currentPage) - 1;
+
+            //pego o form
+            var form = document.getElementById('paginationForm');
+
+            // submeto o formulário
+            form.submit();
+        });
+
+        document.getElementById('next-page').addEventListener('click', function (e) {
+            e.preventDefault();
+            //pego o input de offset
+            var offset = document.getElementById('offset').value
+            offset = parseInt(offset);
+
+            // pega currentPage
+            var currentPage = document.getElementById('currentPage').value;
+            currentPage = parseInt(currentPage);
+
+            // pega o valor do limit
+            var limit = document.getElementById('limit').value;
+            limit = parseInt(limit);
+
+            // pego o valor do countResults
+            var countResults = document.getElementById('countResults').value;
+            countResults = parseInt(countResults);
+
+            if (offset + limit >= countResults) {
+                return;
+            }
+
+            //seto o valor do offset para o valor atual + limit
+            offset = offset + limit;
+            
+            //coloca o valor do offset no input
+            document.getElementById('offset').value = offset;
+
+            console.log('currentPage: ' + currentPage);
+
+            //seto a value do currentPage para o valor atual + 1
+            currentPage + 1;
+            document.getElementById('currentPage').value = currentPage;
+
+            //pego o form
+            var form = document.getElementById('paginationForm');
+
+            // submeto o formulário
+            form.submit();
+
+        });
+
+        document.getElementById('last-page').addEventListener('click', function (e) {
+            e.preventDefault();
+
+            //pego o input de offset
+            var offset = document.getElementById('offset').value
+            offset = parseInt(offset);
+
+            // pega o valor do limit
+            var limit = document.getElementById('limit').value;
+            limit = parseInt(limit);
+
+            // pego o valor do countResults
+            var countResults = document.getElementById('countResults').value;
+            countResults = parseInt(countResults);
+
+            if (offset + limit >= countResults) {
+                return;
+            }
+
+            //seto o valor do offset para o valor atual + limit
+            offset = countResults - limit;
+
+            //coloca o valor do offset no input
+            document.getElementById('offset').value = offset
+
+            //seto a value do currentPage para o valor atual + 1
+            document.getElementById('currentPage').value = Math.ceil(countResults / limit);
+
+            //pego o form
+            var form = document.getElementById('paginationForm');
+
+            // submeto o formulário
+            form.submit();
+
+        });
+
+    }
+
+    function sendPaginationData(mainQuery, mainQueryParams, limit, offset, currentPage, countResults) {
+        $.ajax({
+            url: '/animais-filtrados',
+            type: 'POST',
+            data: {
+                mainQuery: mainQuery,
+                mainQueryParams: mainQueryParams,
+                limit: limit,
+                offset: offset,
+                currentPage: currentPage,
+                countResults: countResults
+            },
+            success: function (response) {
+                console.log(response);
+            },
+            error: function (xhr, status, error) {
+                console.error("Erro ao enviar dados: " + error);
+            }
+        });
     }
 });
 
-$(document).ready(function () {
-    if ($('body').hasClass('filtered-results')) {
-        // Quando o ícone para ir à primeira página é clicado
-        $('#first-page').click(function (e) {
-            e.preventDefault();
-            enviarDados(1);
-        });
-
-        // Quando o ícone para ir à página anterior é clicado
-        $('#previous-page').click(function (e) {
-            e.preventDefault();
-            var paginaAtual = parseInt($('#pagina').text().split(' / ')[0]);
-            if (paginaAtual > 1) {
-                enviarDados(paginaAtual - 1);
-            }
-        });
-
-        // Quando o ícone para ir à próxima página é clicado
-        $('#next-page').click(function (e) {
-            e.preventDefault();
-            var paginaAtual = parseInt($('#pagina').text().split(' / ')[0]);
-            var totalPaginas = parseInt($('#pagina').text().split(' / ')[1]);
-            if (paginaAtual < totalPaginas) {
-                enviarDados(paginaAtual + 1);
-            }
-        });
-
-        // Quando o ícone para ir à última página é clicado
-        $('#last-page').click(function (e) {
-            e.preventDefault();
-            var totalPaginas = parseInt($('#pagina').text().split(' / ')[1]);
-            enviarDados(totalPaginas);
-        });
-
-        function enviarDados(pagina) {
-            $.ajax({
-                url: '/consulta',
-                type: 'POST',
-                data: {
-                    page: pagina,
-                    raca: $('#raca').val(),
-                    sexo: $('#sexo').val(),
-                },
-                success: function (response) {
-                    console.log(response);
-                },
-                error: function (xhr, status, error) {
-                    console.error("Erro ao enviar dados: " + error);
-                }
-            });
-        }
-    }
-});

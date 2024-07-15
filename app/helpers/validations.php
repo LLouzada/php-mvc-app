@@ -18,16 +18,17 @@ function validateControllerData(array $routerData): void
         throw new Exception('Dados inválidos. Verifique o retorno do controller.');
     }
 
-    if(isset($routerData['data']['success']) && $routerData['data']['success'] === false) {
-        if(!isset($routerData['data']['message'])) {
+    if (isset($routerData['data']['success']) && $routerData['data']['success'] === false) {
+        if (!isset($routerData['data']['message'])) {
             throw new Exception('Mensagem de erro não encontrada. Verifique o retorno do controller.');
         }
     }
 
-    if(isset($routerData['data']['success']) && $routerData['data']['success'] === true) {
-        if(!isset($routerData['data']['filteredResults']) || !isset($routerData['data']['countResults']) || !isset($routerData['data']['mainQuery']) 
-        || !isset($routerData['data']['mainQueryParams']) || !isset($routerData['data']['countQuery']) || !isset($routerData['data']['countQueryParams'])
-        || !isset($routerData['data']['limit']) || !isset($routerData['data']['offset'])) {
+    if (isset($routerData['data']['success']) && $routerData['data']['success'] === true) {
+        if (
+            !isset($routerData['data']['filteredResults']) || !isset($routerData['data']['countResults']) || !isset($routerData['data']['mainQuery'])
+            || !isset($routerData['data']['mainQueryParams']) || !isset($routerData['data']['limit']) || !isset($routerData['data']['offset'])
+        ) {
             throw new Exception('Dados de resultados não encontrados. Verifique o retorno do controller.');
         }
     }

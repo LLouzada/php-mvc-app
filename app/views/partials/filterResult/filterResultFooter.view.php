@@ -3,7 +3,7 @@
         <tr>
             <td colspan="2" align="center" style="font-size: 12px">Total de Animais Selecionados:
                 <?php
-                echo htmlspecialchars($countResults);
+                echo htmlspecialchars($countResultsFinal);
                 ?>
             </td>
         </tr>
@@ -13,11 +13,11 @@
                     <?php
                     if ($success) {
                         echo
-                        '<div class="col-2 m-0" id="first-page" onclick="">
-                            <a href="" onclick=""><i class="fas fa-angle-double-left"></i></a>
+                        '<div class="col-2 m-0"  onclick="">
+                            <a href="#" id="first-page" onclick=""><i class="fas fa-angle-double-left"></i></a>
                         </div>
-                        <div class="col-2 px-0" id="previous-page" onclick="">
-                            <a href="" onclick=""><i class="fas fa-angle-left"></i></a>
+                        <div class="col-2 px-0" onclick="">
+                            <a href="#" id="previous-page" onclick=""><i class="fas fa-angle-left"></i></a>
                         </div>';
                     }
                     ?>
@@ -34,11 +34,11 @@
                     <?php
                     if ($success) {
                         echo
-                        '<div class="col-2 px-0" id="next-page" onclick="">
-                            <a href="" onclick=""><i class="fas fa-angle-right"></i></a>
+                        '<div class="col-2 px-0" onclick="">
+                            <a href="#" onclick="" id="next-page"><i class="fas fa-angle-right"></i></a>
                         </div>
-                        <div class="col-2 px-0" id="last-page" onclick="">
-                            <a href="" onclick=""><i class="fas fa-angle-double-right"></i></a>
+                        <div class="col-2 px-0"  onclick="">
+                            <a href="#" onclick="" id="last-page"><i class="fas fa-angle-double-right"></i></a>
                         </div>';
                     }
                     ?>
@@ -58,13 +58,3 @@
     </tbody>
 </table>
 
-<script>
-    var mainQuery = <?php echo json_encode($mainQuery); ?>;
-    var mainQueryParams = <?php echo json_encode($mainQueryParams); ?>;
-    var countQuery = <?php echo json_encode($countQuery); ?>;
-    var countQueryParams = <?php echo json_encode($countQueryParams); ?>;
-    var limit = <?php echo json_encode($limit); ?>;
-    var offset = <?php echo json_encode($offset); ?>;
-    var currentPage = <?php echo json_encode($currentPage); ?>;
-    var numberPages = <?php echo json_encode($numberPages); ?>;
-</script>

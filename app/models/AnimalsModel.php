@@ -21,9 +21,55 @@ class AnimalsModel
         validateDbConnection($this->pdo);
     }
 
-    public function getFilteredResults(array $requestData)
+    public function getFilteredResults(array $requestData, bool $isPagination = false)
     {
         $prepare = new PrepareQuery();
+
+        if ($isPagination) {
+            $limit = (int) $requestData['limit'];
+            $offset = (int) $requestData['offset'];
+
+            $mainQuery = $requestData['mainQuery'];
+            $mainQueryParams = json_decode($requestData['mainQueryParams'], true);
+
+            // add limit and offset to the main query params
+            $mainQueryParams['limit'] = $limit;
+            $mainQueryParams['offset'] = $offset;
+
+            $resultMainQuery = $this->runMainQuery([
+                'query' => $mainQuery,
+                'queryParams' => $mainQueryParams
+            ]);
+            
+            if (empty($resultMainQuery) || $resultMainQuery === "404") {
+                return $this->notFound();
+            }
+            
+            //string(3) "NaN"
+            if ($requestData['currentPage'] === "NaN") {
+                //calculate the current page based on the offset and limit
+                $requestData['currentPage'] = ($offset / $limit) + 1;
+            }
+
+            return [
+                'view' => 'filteredAnimals.view.php',
+                'data' => [
+                    'title' => 'Consulta Pública de Machos Jovens e Touros',
+                    'secondTitle' => 'Animais Filtrados - Consulta Avaliação Genética',
+                    'success' => true,
+                    'filteredResults' => $resultMainQuery,
+                    'countResults' => $requestData['countResults'],
+                    'mainQuery' => $mainQuery,
+                    'mainQueryParams' => $mainQueryParams,
+                    'limit' => $limit,
+                    'offset' => $offset,
+                    'currentPage' => $requestData['currentPage'],
+                    'pagination' => true
+                ]
+            ];
+        }
+
+
         $resultOfQueryPrepare = $prepare->prepareFilterQuery($requestData, $this->table, $this->pdo);
 
         if ($resultOfQueryPrepare === "404") {
@@ -61,6 +107,7 @@ class AnimalsModel
                 'limit' => (int) $requestData['limit'],
                 'offset' => 0,
                 'classification' => $resultOfQueryPrepare['classification'],
+                'pagination' => false
             ]
         ];
     }

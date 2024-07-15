@@ -15,4 +15,5 @@ return [
     '/lucas/consulta-de-touros' => 'Filter@index',
     '/test' => 'Test@index',
     '/animais-filtrados' => 'FilteredAnimals@filter',
+    '/lucas/animais-filtrados' => 'FilteredAnimals@filter',
 ];

@@ -2,18 +2,26 @@
 
 $showldShowEmptyMessage = false;
 if (!$success) {
-    $countResults = 0;
+    $countResultsFinal = 0;
 } else {
+    if($pagination){
+        $countResultsFinal = $countResults;
+        $numberPages = ceil($countResultsFinal / $limit);
+        $currentPage = $offset === 0 ? 1 : $currentPage;
+        $classification = $classification ?? '';
+    } else {
+        $countResultsFinal = htmlspecialchars($countResults['COUNT(*)']);
+    }
     $filteredResults = $filteredResults ?? [];
-    $countResults = htmlspecialchars($countResults['COUNT(*)']);
-    $numberPages = ceil($countResults / $limit);
-    $currentPage = $offset === 0 ? 1 : $offset / $limit + 1;
+    $numberPages = ceil($countResultsFinal / $limit);
+    $currentPage = $offset === 0 ? 1 : $currentPage;
     $classification = $classification ?? '';
+    
 }
 
 ?>
 
-<div class="filtered-results" id="aba2" class="mt-3" style="border-top-width: 0px; display: block;">
+<div class="filtered-results" id="filtered-results" class="mt-3" style="border-top-width: 0px; display: block;">
     <table width="100%" border="0">
         <tbody>
 
@@ -22,7 +30,9 @@ if (!$success) {
                 echo '<tr><td height="39" colspan="2" align="center" style="font-size: 12px">Nenhum animal encontrado.</td></tr>';
             } else {
                 include VIEWS_PATH . 'partials/filterResult/filterResultHead.view.php';
-                $currentIndex = 1;
+
+                $currentIndex = $offset + 1;
+
                 foreach ($filteredResults as $index => $animal) {
                     $dt_nasc = $animal['dt_nasc'] ?? '';
                     if (!empty($dt_nasc)) {
@@ -66,3 +76,14 @@ if (!$success) {
         </div>
     </div>
 </div>
+
+<form id="paginationForm" action="/animais-filtrados" method="POST" style="display: none;">
+    <input type="hidden" name="pagination" id="pagination" value="true">
+    <input type="hidden" name="mainQuery" id="mainQuery" value="<?php echo htmlspecialchars($mainQuery); ?>">
+    <input type="hidden" name="mainQueryParams" id="mainQueryParams" value='<?php echo htmlspecialchars(json_encode($mainQueryParams)); ?>'>
+    <input type="hidden" name="limit" id="limit" value="<?php echo htmlspecialchars($limit); ?>">
+    <input type="hidden" name="offset" id="offset" value="<?php echo htmlspecialchars($offset); ?>">
+    <input type="hidden" name="currentPage" id="currentPage" value="<?php htmlspecialchars($currentPage); ?>">
+    <input type="hidden" name="numberPages" id="numberPages" value="<?php echo htmlspecialchars($numberPages); ?>">
+    <input type="hidden" name="countResults" id="countResults" value="<?php echo htmlspecialchars($countResultsFinal); ?>">
+</form>
