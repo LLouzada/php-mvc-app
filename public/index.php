@@ -18,8 +18,6 @@ try {
     extract($routerData['data']);
 
     $routedView = $routerData['view'];
-    // var_dump($routedView);
-    // die();
 
     // Carrega a view principal da aplicação.
     require VIEWS_PATH . 'master.view.php';

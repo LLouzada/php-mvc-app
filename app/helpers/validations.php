@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * Valida os dados retornados pelo controller.
+ * 
+ * @param array $routerData
+ * @return void
+ */
 function validateControllerData(array $routerData): void
 {
     if (!isset($routerData['view'])) {
@@ -37,6 +43,14 @@ function validateControllerData(array $routerData): void
     }
 }
 
+/**
+ * Valida a rota da requisição do usuário.
+ * 
+ * @param string $controllerWithNamespace
+ * @param string $method
+ * @param string $controller
+ * @return void
+ */
 function validateRequestRoute(string $controllerWithNamespace, string $method, string $controller): void
 {
 
@@ -49,6 +63,12 @@ function validateRequestRoute(string $controllerWithNamespace, string $method, s
     }
 }
 
+/**
+ * Valida a conexão com o banco de dados.
+ * 
+ * @param PDO $pdo
+ * @return void
+ */
 function validateDbConnection($pdo): void
 {
     if ($pdo == null) {
@@ -56,6 +76,12 @@ function validateDbConnection($pdo): void
     }
 }
 
+/**
+ * Valida o resultado da query preparada.
+ * 
+ * @param array $requestData
+ * @return void
+ */
 function validateResultOfQueryPrepare(array $requestData): void
 {
     if (empty($requestData)) {
@@ -66,17 +92,3 @@ function validateResultOfQueryPrepare(array $requestData): void
         throw new Exception("Dados da preparação da query não encontrados.");
     }
 }
-
-// function validateFilteredResults(array $filteredResults): void
-// {
-//     if (empty($filteredResults)) {
-//         throw new Exception("Erro ao filtrar os resultados.");
-//     }
-
-//     if (
-// /        !isset($filteredResults['filteredResults']) || !isset($filteredResults['countResults']) || !isset($filteredResults['mainQuery'])
-//         || !isset($filteredResults['mainQueryParams']) || !isset($filteredResults['countQuery']) || !isset($filteredResults['countQueryParams'])
-//     ) {
-//         throw new Exception("Dados dos resultados filtrados não encontrados.");
-//     }
-// }

@@ -103,7 +103,7 @@ return [
         '16' => $depsMap['dipp']['1'],
         '17' => $depsMap['dpg']['1'],
         '18' => $depsMap['dpav']['1'],
-        '19' => $depsMap['dpac']['1'],
+        '19' => 'dpac',
         '20' => $depsMap['daol']['1'],
         '21' => $depsMap['dstay']['1'],
         '22' => $depsMap['d3p']['1'],

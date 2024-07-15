@@ -359,27 +359,27 @@ function convertPercentageToDecimal($percentage)
                             <td height="17" class="ficha_texto_campo">
                                 <?php echo $animalDetails[$depsMap['mtp120']['1']]; ?>
                                 &nbsp;</td>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td height="17" class="ficha_texto_campo">
-                                <font color="#0066CC">
-                                    <?php
-                                    $acc = convertPercentageToDecimal($animalDetails[$depsMap['mtp120']['2']]);
-                                    echo '@&nbsp;' . $acc;
-                                    ?>
-                                </font>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td height="17" class="ficha_texto_campo">
-                                <font color="#FF3333">
-                                    <?php echo '®&nbsp;' . $animalDetails[$depsMap['mtp120']['3']] . '%'; ?>
-                                </font>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+            </td>
+            </tr>
+            <tr>
+                <td height="17" class="ficha_texto_campo">
+                    <font color="#0066CC">
+                        <?php
+                        $acc = convertPercentageToDecimal($animalDetails[$depsMap['mtp120']['2']]);
+                        echo '@&nbsp;' . $acc;
+                        ?>
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td height="17" class="ficha_texto_campo">
+                    <font color="#FF3333">
+                        <?php echo '®&nbsp;' . $animalDetails[$depsMap['mtp120']['3']] . '%'; ?>
+                    </font>
+                </td>
+            </tr>
+            </tbody>
+            </table>
             </td>
             <td align="center" id="mtp210_f">
                 <table border="0" width="60" cellpadding="0" cellspacing="0" class="borda_dep">
@@ -451,7 +451,8 @@ function convertPercentageToDecimal($percentage)
                         </tr>
                         <tr>
                             <td height="17" class="ficha_texto_campo">
-                                <?php //echo $animalDetails[$depsMap['dpac']['1']]; ?>
+                                <?php //echo $animalDetails[$depsMap['dpac']['1']]; 
+                                ?>
                             </td>
                         </tr>
                         <tr>
@@ -467,7 +468,8 @@ function convertPercentageToDecimal($percentage)
                         <tr>
                             <td height="17" class="ficha_texto_campo">
                                 <font color="#FF3333">
-                                    <?php //echo '®&nbsp;' . $animalDetails[$depsMap['dpac']['3']] . '%'; ?>
+                                    <?php //echo '®&nbsp;' . $animalDetails[$depsMap['dpac']['3']] . '%'; 
+                                    ?>
                                 </font>
                             </td>
                         </tr>
@@ -521,20 +523,24 @@ function convertPercentageToDecimal($percentage)
                                     </tr>
                                     <tr>
                                         <td height="17" class="ficha_texto_campo">
-                                            <?php echo
-                                            
+                                            <?php echo $animalDetails[$depsMap['dpn']['1']]; ?>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td height="17" class="ficha_texto_campo">
                                             <font color="#0066CC">
-                                                @&nbsp;32 </font>
+                                                <?php
+                                                $acc = convertPercentageToDecimal($animalDetails[$depsMap['dpn']['2']]);
+                                                echo '@&nbsp;' . $acc;
+                                                ?>
+                                            </font>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td height="17" class="ficha_texto_campo">
                                             <font color="#FF3333">
-                                                ®&nbsp;27% </font>
+                                                <?php echo '®&nbsp;' . $animalDetails[$depsMap['dpn']['3']] . '%'; ?>
+                                            </font>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -547,18 +553,25 @@ function convertPercentageToDecimal($percentage)
                                         <td class="ficha_cabecalho_campo">DP120</td>
                                     </tr>
                                     <tr>
-                                        <td height="17" class="ficha_texto_campo">5.62 &nbsp;</td>
+                                        <td height="17" class="ficha_texto_campo">
+                                            <?php echo $animalDetails[$depsMap['dp120']['1']]; ?>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td height="17" class="ficha_texto_campo">
                                             <font color="#0066CC">
-                                                @&nbsp;24 </font>
+                                                <?php
+                                                $acc = convertPercentageToDecimal($animalDetails[$depsMap['dp120']['2']]);
+                                                echo '@&nbsp;' . $acc;
+                                                ?>
+                                            </font>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td height="17" class="ficha_texto_campo">
                                             <font color="#FF3333">
-                                                ®&nbsp;11% </font>
+                                                <?php echo '®&nbsp;' . $animalDetails[$depsMap['dp120']['3']] . '%'; ?>
+                                            </font>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -571,18 +584,25 @@ function convertPercentageToDecimal($percentage)
                                         <td class="ficha_cabecalho_campo_dep">DP210</td>
                                     </tr>
                                     <tr>
-                                        <td height="17" class="ficha_texto_campo_dep">8.73 &nbsp;</td>
+                                        <td height="17" class="ficha_texto_campo_dep">
+                                            <?php echo $animalDetails[$depsMap['dp210']['1']]; ?>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td height="17" class="ficha_texto_campo_dep">
                                             <font color="#0066CC">
-                                                @&nbsp;25 </font>
+                                                <?php
+                                                $acc = convertPercentageToDecimal($animalDetails[$depsMap['dp210']['2']]);
+                                                echo '@&nbsp;' . $acc;
+                                                ?>
+                                            </font>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td height="17" class="ficha_texto_campo_dep">
                                             <font color="#FF3333">
-                                                ®&nbsp;13% </font>
+                                                <?php echo '®&nbsp;' . $animalDetails[$depsMap['dp210']['3']] . '%'; ?>
+                                            </font>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -595,18 +615,25 @@ function convertPercentageToDecimal($percentage)
                                         <td class="ficha_cabecalho_campo">DP365</td>
                                     </tr>
                                     <tr>
-                                        <td height="17" class="ficha_texto_campo">16.80 &nbsp;</td>
+                                        <td height="17" class="ficha_texto_campo">
+                                            <?php echo $animalDetails[$depsMap['dp365']['1']]; ?>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td height="17" class="ficha_texto_campo">
                                             <font color="#0066CC">
-                                                @&nbsp;27 </font>
+                                                <?php
+                                                $acc = convertPercentageToDecimal($animalDetails[$depsMap['dp365']['2']]);
+                                                echo '@&nbsp;' . $acc;
+                                                ?>
+                                            </font>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td height="17" class="ficha_texto_campo">
                                             <font color="#FF3333">
-                                                ®&nbsp;13% </font>
+                                                <?php echo '®&nbsp;' . $animalDetails[$depsMap['dp365']['3']] . '%'; ?>
+                                            </font>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -619,18 +646,25 @@ function convertPercentageToDecimal($percentage)
                                         <td class="ficha_cabecalho_campo_dep">DP450</td>
                                     </tr>
                                     <tr>
-                                        <td height="17" class="ficha_texto_campo_dep">13.65 &nbsp;</td>
+                                        <td height="17" class="ficha_texto_campo_dep">
+                                            <?php echo $animalDetails[$depsMap['dp450']['1']]; ?>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td height="17" class="ficha_texto_campo_dep">
                                             <font color="#0066CC">
-                                                @&nbsp;36 </font>
+                                                <?php
+                                                $acc = convertPercentageToDecimal($animalDetails[$depsMap['dp450']['2']]);
+                                                echo '@&nbsp;' . $acc;
+                                                ?>
+                                            </font>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td height="17" class="ficha_texto_campo_dep">
                                             <font color="#FF3333">
-                                                ®&nbsp;20% </font>
+                                                <?php echo '®&nbsp;' . $animalDetails[$depsMap['dp450']['3']] . '%'; ?>
+                                            </font>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -643,18 +677,25 @@ function convertPercentageToDecimal($percentage)
                                         <td class="ficha_cabecalho_campo">DPAV</td>
                                     </tr>
                                     <tr>
-                                        <td height="17" class="ficha_texto_campo">46.85 &nbsp;</td>
+                                        <td height="17" class="ficha_texto_campo">
+                                            <?php echo $animalDetails[$depsMap['dpav']['1']]; ?>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td height="17" class="ficha_texto_campo">
                                             <font color="#0066CC">
-                                                @&nbsp;21 </font>
+                                                <?php
+                                                $acc = convertPercentageToDecimal($animalDetails[$depsMap['dpav']['2']]);
+                                                echo '@&nbsp;' . $acc;
+                                                ?>
+                                            </font>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td height="17" class="ficha_texto_campo">
                                             <font color="#FF3333">
-                                                ®&nbsp;100% </font>
+                                                <?php echo '®&nbsp;' . $animalDetails[$depsMap['dpav']['3']] . '%'; ?>
+                                            </font>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -667,17 +708,24 @@ function convertPercentageToDecimal($percentage)
                                         <td class="ficha_cabecalho_campo">DCAR</td>
                                     </tr>
                                     <tr>
-                                        <td height="17" class="ficha_texto_campo"> &nbsp;</td>
+                                        <td height="17" class="ficha_texto_campo">
+                                            <?php echo $animalDetails[$depsMap['dcar']['1']]; ?>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td height="17" class="ficha_texto_campo">
                                             <font color="#0066CC">
+                                                <?php
+                                                $acc = convertPercentageToDecimal($animalDetails[$depsMap['dcar']['2']]);
+                                                echo '@&nbsp;' . $acc;
+                                                ?>
                                             </font>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td height="17" class="ficha_texto_campo">
                                             <font color="#FF3333">
+                                                <?php echo '®&nbsp;' . $animalDetails[$depsMap['dcar']['3']] . '%'; ?>
                                             </font>
                                         </td>
                                     </tr>
@@ -691,17 +739,24 @@ function convertPercentageToDecimal($percentage)
                                         <td class="ficha_cabecalho_campo">DIMS</td>
                                     </tr>
                                     <tr>
-                                        <td height="17" class="ficha_texto_campo"> &nbsp;</td>
+                                        <td height="17" class="ficha_texto_campo">
+                                            <?php echo $animalDetails[$depsMap['dims']['1']]; ?>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td height="17" class="ficha_texto_campo">
                                             <font color="#0066CC">
+                                                <?php
+                                                $acc = convertPercentageToDecimal($animalDetails[$depsMap['dims']['2']]);
+                                                echo '@&nbsp;' . $acc;
+                                                ?>
                                             </font>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td height="17" class="ficha_texto_campo">
                                             <font color="#FF3333">
+                                                <?php echo '®&nbsp;' . $animalDetails[$depsMap['dims']['3']] . '%'; ?>
                                             </font>
                                         </td>
                                     </tr>
@@ -715,18 +770,25 @@ function convertPercentageToDecimal($percentage)
                                         <td class="ficha_cabecalho_campo_dep">DPE365</td>
                                     </tr>
                                     <tr>
-                                        <td height="17" class="ficha_texto_campo_dep">-0.12 &nbsp;</td>
+                                        <td height="17" class="ficha_texto_campo_dep">
+                                            <?php echo $animalDetails[$depsMap['dpe365']['1']]; ?>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td height="17" class="ficha_texto_campo_dep">
                                             <font color="#0066CC">
-                                                @&nbsp;22 </font>
+                                                <?php
+                                                $acc = convertPercentageToDecimal($animalDetails[$depsMap['dpe365']['2']]);
+                                                echo '@&nbsp;' . $acc;
+                                                ?>
+                                            </font>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td height="17" class="ficha_texto_campo_dep">
                                             <font color="#FF3333">
-                                                ®&nbsp;76% </font>
+                                                <?php echo '®&nbsp;' . $animalDetails[$depsMap['dpe365']['3']] . '%'; ?>
+                                            </font>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -739,18 +801,25 @@ function convertPercentageToDecimal($percentage)
                                         <td class="ficha_cabecalho_campo">DPE450</td>
                                     </tr>
                                     <tr>
-                                        <td height="17" class="ficha_texto_campo">-0.14 &nbsp;</td>
+                                        <td height="17" class="ficha_texto_campo">
+                                            <?php echo $animalDetails[$depsMap['dpe450']['1']]; ?>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td height="17" class="ficha_texto_campo">
                                             <font color="#0066CC">
-                                                @&nbsp;25 </font>
+                                                <?php
+                                                $acc = convertPercentageToDecimal($animalDetails[$depsMap['dpe450']['2']]);
+                                                echo '@&nbsp;' . $acc;
+                                                ?>
+                                            </font>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td height="17" class="ficha_texto_campo">
                                             <font color="#FF3333">
-                                                ®&nbsp;72% </font>
+                                                <?php echo '®&nbsp;' . $animalDetails[$depsMap['dpe450']['3']] . '%'; ?>
+                                            </font>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -771,18 +840,25 @@ function convertPercentageToDecimal($percentage)
                                         <td class="ficha_cabecalho_campo_dep">DAOL</td>
                                     </tr>
                                     <tr>
-                                        <td height="17" class="ficha_texto_campo_dep">3.60 &nbsp;</td>
+                                        <td height="17" class="ficha_texto_campo_dep">
+                                            <?php echo $animalDetails[$depsMap['daol']['1']]; ?>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td height="17" class="ficha_texto_campo_dep">
                                             <font color="#0066CC">
-                                                @&nbsp;21 </font>
+                                                <?php
+                                                $acc = convertPercentageToDecimal($animalDetails[$depsMap['daol']['2']]);
+                                                echo '@&nbsp;' . $acc;
+                                                ?>
+                                            </font>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td height="17" class="ficha_texto_campo_dep">
                                             <font color="#FF3333">
-                                                ®&nbsp;4% </font>
+                                                <?php echo '®&nbsp;' . $animalDetails[$depsMap['daol']['3']] . '%'; ?>
+                                            </font>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -795,18 +871,25 @@ function convertPercentageToDecimal($percentage)
                                         <td class="ficha_cabecalho_campo_dep">DACAB</td>
                                     </tr>
                                     <tr>
-                                        <td height="17" class="ficha_texto_campo_dep">0.07 &nbsp;</td>
+                                        <td height="17" class="ficha_texto_campo_dep">
+                                            <?php echo $animalDetails[$depsMap['dacab']['1']]; ?>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td height="17" class="ficha_texto_campo_dep">
                                             <font color="#0066CC">
-                                                @&nbsp;19 </font>
+                                                <?php
+                                                $acc = convertPercentageToDecimal($animalDetails[$depsMap['dacab']['2']]);
+                                                echo '@&nbsp;' . $acc;
+                                                ?>
+                                            </font>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td height="17" class="ficha_texto_campo_dep">
                                             <font color="#FF3333">
-                                                ®&nbsp;31% </font>
+                                                <?php echo '®&nbsp;' . $animalDetails[$depsMap['dacab']['3']] . '%'; ?>
+                                            </font>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -819,18 +902,25 @@ function convertPercentageToDecimal($percentage)
                                         <td class="ficha_cabecalho_campo">DMAR</td>
                                     </tr>
                                     <tr>
-                                        <td height="17" class="ficha_texto_campo">-0.07 &nbsp;</td>
+                                        <td height="17" class="ficha_texto_campo">
+                                            <?php echo $animalDetails[$depsMap['dmar']['1']]; ?>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td height="17" class="ficha_texto_campo">
                                             <font color="#0066CC">
-                                                @&nbsp;17 </font>
+                                                <?php
+                                                $acc = convertPercentageToDecimal($animalDetails[$depsMap['dmar']['2']]);
+                                                echo '@&nbsp;' . $acc;
+                                                ?>
+                                            </font>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td height="17" class="ficha_texto_campo">
                                             <font color="#FF3333">
-                                                ®&nbsp;72% </font>
+                                                <?php echo '®&nbsp;' . $animalDetails[$depsMap['dmar']['3']] . '%'; ?>
+                                            </font>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -843,17 +933,24 @@ function convertPercentageToDecimal($percentage)
                                         <td class="ficha_cabecalho_campo">DMAC</td>
                                     </tr>
                                     <tr>
-                                        <td height="17" class="ficha_texto_campo"> &nbsp;</td>
+                                        <td height="17" class="ficha_texto_campo">
+                                            <?php echo $animalDetails[$depsMap['dmac']['1']]; ?>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td height="17" class="ficha_texto_campo">
                                             <font color="#0066CC">
+                                                <?php
+                                                $acc = convertPercentageToDecimal($animalDetails[$depsMap['dmac']['2']]);
+                                                echo '@&nbsp;' . $acc;
+                                                ?>
                                             </font>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td height="17" class="ficha_texto_campo">
                                             <font color="#FF3333">
+                                                <?php echo '®&nbsp;' . $animalDetails[$depsMap['dmac']['3']] . '%'; ?>
                                             </font>
                                         </td>
                                     </tr>
@@ -867,18 +964,25 @@ function convertPercentageToDecimal($percentage)
                                         <td class="ficha_cabecalho_campo">DPCQ</td>
                                     </tr>
                                     <tr>
-                                        <td height="17" class="ficha_texto_campo">11.58 &nbsp;</td>
+                                        <td height="17" class="ficha_texto_campo">
+                                            <?php echo $animalDetails[$depsMap['dpcq']['1']]; ?>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td height="17" class="ficha_texto_campo">
                                             <font color="#0066CC">
-                                                @&nbsp;26 </font>
+                                                <?php
+                                                $acc = convertPercentageToDecimal($animalDetails[$depsMap['dpcq']['2']]);
+                                                echo '@&nbsp;' . $acc;
+                                                ?>
+                                            </font>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td height="17" class="ficha_texto_campo">
                                             <font color="#FF3333">
-                                                ®&nbsp;12% </font>
+                                                <?php echo '®&nbsp;' . $animalDetails[$depsMap['dpcq']['3']] . '%'; ?>
+                                            </font>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -891,18 +995,25 @@ function convertPercentageToDecimal($percentage)
                                         <td class="ficha_cabecalho_campo">DPPC</td>
                                     </tr>
                                     <tr>
-                                        <td height="17" class="ficha_texto_campo">5.02 &nbsp;</td>
+                                        <td height="17" class="ficha_texto_campo">
+                                            <?php echo $animalDetails[$depsMap['dppc']['1']]; ?>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td height="17" class="ficha_texto_campo">
                                             <font color="#0066CC">
-                                                @&nbsp;27 </font>
+                                                <?php
+                                                $acc = convertPercentageToDecimal($animalDetails[$depsMap['dppc']['2']]);
+                                                echo '@&nbsp;' . $acc;
+                                                ?>
+                                            </font>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td height="17" class="ficha_texto_campo">
                                             <font color="#FF3333">
-                                                ®&nbsp;11% </font>
+                                                <?php echo '®&nbsp;' . $animalDetails[$depsMap['dppc']['3']] . '%'; ?>
+                                            </font>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -915,17 +1026,24 @@ function convertPercentageToDecimal($percentage)
                                         <td class="ficha_cabecalho_campo">DED</td>
                                     </tr>
                                     <tr>
-                                        <td height="17" class="ficha_texto_campo"> &nbsp;</td>
+                                        <td height="17" class="ficha_texto_campo">
+                                            <?php echo $animalDetails[$depsMap['ded']['1']]; ?>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td height="17" class="ficha_texto_campo">
                                             <font color="#0066CC">
+                                                <?php
+                                                $acc = convertPercentageToDecimal($animalDetails[$depsMap['ded']['2']]);
+                                                echo '@&nbsp;' . $acc;
+                                                ?>
                                             </font>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td height="17" class="ficha_texto_campo">
                                             <font color="#FF3333">
+                                                <?php echo '®&nbsp;' . $animalDetails[$depsMap['ded']['3']] . '%'; ?>
                                             </font>
                                         </td>
                                     </tr>
@@ -939,17 +1057,24 @@ function convertPercentageToDecimal($percentage)
                                         <td class="ficha_cabecalho_campo">DPD</td>
                                     </tr>
                                     <tr>
-                                        <td height="17" class="ficha_texto_campo"> &nbsp;</td>
+                                        <td height="17" class="ficha_texto_campo">
+                                            <?php echo $animalDetails[$depsMap['dpd']['1']]; ?>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td height="17" class="ficha_texto_campo">
                                             <font color="#0066CC">
+                                                <?php
+                                                $acc = convertPercentageToDecimal($animalDetails[$depsMap['dpd']['2']]);
+                                                echo '@&nbsp;' . $acc;
+                                                ?>
                                             </font>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td height="17" class="ficha_texto_campo">
                                             <font color="#FF3333">
+                                                <?php echo '®&nbsp;' . $animalDetails[$depsMap['dpd']['3']] . '%'; ?>
                                             </font>
                                         </td>
                                     </tr>
@@ -963,17 +1088,24 @@ function convertPercentageToDecimal($percentage)
                                         <td class="ficha_cabecalho_campo">DMD</td>
                                     </tr>
                                     <tr>
-                                        <td height="17" class="ficha_texto_campo"> &nbsp;</td>
+                                        <td height="17" class="ficha_texto_campo">
+                                            <?php echo $animalDetails[$depsMap['dmd']['1']]; ?>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td height="17" class="ficha_texto_campo">
                                             <font color="#0066CC">
+                                                <?php
+                                                $acc = convertPercentageToDecimal($animalDetails[$depsMap['dmd']['2']]);
+                                                echo '@&nbsp;' . $acc;
+                                                ?>
                                             </font>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td height="17" class="ficha_texto_campo">
                                             <font color="#FF3333">
+                                                <?php echo '®&nbsp;' . $animalDetails[$depsMap['dmd']['3']] . '%'; ?>
                                             </font>
                                         </td>
                                     </tr>
@@ -987,17 +1119,24 @@ function convertPercentageToDecimal($percentage)
                                         <td class="ficha_cabecalho_campo">DES</td>
                                     </tr>
                                     <tr>
-                                        <td height="17" class="ficha_texto_campo"> &nbsp;</td>
+                                        <td height="17" class="ficha_texto_campo">
+                                            <?php echo $animalDetails[$depsMap['des']['1']]; ?>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td height="17" class="ficha_texto_campo">
                                             <font color="#0066CC">
+                                                <?php
+                                                $acc = convertPercentageToDecimal($animalDetails[$depsMap['des']['2']]);
+                                                echo '@&nbsp;' . $acc;
+                                                ?>
                                             </font>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td height="17" class="ficha_texto_campo">
                                             <font color="#FF3333">
+                                                <?php echo '®&nbsp;' . $animalDetails[$depsMap['des']['3']] . '%'; ?>
                                             </font>
                                         </td>
                                     </tr>
@@ -1019,17 +1158,24 @@ function convertPercentageToDecimal($percentage)
                                         <td class="ficha_cabecalho_campo">DPS</td>
                                     </tr>
                                     <tr>
-                                        <td height="17" class="ficha_texto_campo"> &nbsp;</td>
+                                        <td height="17" class="ficha_texto_campo">
+                                            <?php echo $animalDetails[$depsMap['dps']['1']]; ?>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td height="17" class="ficha_texto_campo">
                                             <font color="#0066CC">
+                                                <?php
+                                                $acc = convertPercentageToDecimal($animalDetails[$depsMap['dps']['2']]);
+                                                echo '@&nbsp;' . $acc;
+                                                ?>
                                             </font>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td height="17" class="ficha_texto_campo">
                                             <font color="#FF3333">
+                                                <?php echo '®&nbsp;' . $animalDetails[$depsMap['dps']['3']] . '%'; ?>
                                             </font>
                                         </td>
                                     </tr>
@@ -1043,17 +1189,24 @@ function convertPercentageToDecimal($percentage)
                                         <td class="ficha_cabecalho_campo">DMS</td>
                                     </tr>
                                     <tr>
-                                        <td height="17" class="ficha_texto_campo"> &nbsp;</td>
+                                        <td height="17" class="ficha_texto_campo">
+                                            <?php echo $animalDetails[$depsMap['dms']['1']]; ?>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td height="17" class="ficha_texto_campo">
                                             <font color="#0066CC">
+                                                <?php
+                                                $acc = convertPercentageToDecimal($animalDetails[$depsMap['dms']['2']]);
+                                                echo '@&nbsp;' . $acc;
+                                                ?>
                                             </font>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td height="17" class="ficha_texto_campo">
                                             <font color="#FF3333">
+                                                <?php echo '®&nbsp;' . $animalDetails[$depsMap['dms']['3']] . '%'; ?>
                                             </font>
                                         </td>
                                     </tr>
@@ -1067,18 +1220,25 @@ function convertPercentageToDecimal($percentage)
                                         <td class="ficha_cabecalho_campo">DALT</td>
                                     </tr>
                                     <tr>
-                                        <td height="17" class="ficha_texto_campo">2.07 &nbsp;</td>
+                                        <td height="17" class="ficha_texto_campo">
+                                            <?php echo $animalDetails[$depsMap['dalt']['1']]; ?>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td height="17" class="ficha_texto_campo">
                                             <font color="#0066CC">
-                                                @&nbsp;19 </font>
+                                                <?php
+                                                $acc = convertPercentageToDecimal($animalDetails[$depsMap['dalt']['2']]);
+                                                echo '@&nbsp;' . $acc;
+                                                ?>
+                                            </font>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td height="17" class="ficha_texto_campo">
                                             <font color="#FF3333">
-                                                ®&nbsp;93% </font>
+                                                <?php echo '®&nbsp;' . $animalDetails[$depsMap['dalt']['3']] . '%'; ?>
+                                            </font>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -1091,17 +1251,24 @@ function convertPercentageToDecimal($percentage)
                                         <td class="ficha_cabecalho_campo">DFRAME</td>
                                     </tr>
                                     <tr>
-                                        <td height="17" class="ficha_texto_campo"> &nbsp;</td>
+                                        <td height="17" class="ficha_texto_campo">
+                                            <?php echo $animalDetails[$depsMap['dframe']['1']]; ?>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td height="17" class="ficha_texto_campo">
                                             <font color="#0066CC">
+                                                <?php
+                                                $acc = convertPercentageToDecimal($animalDetails[$depsMap['dframe']['2']]);
+                                                echo '@&nbsp;' . $acc;
+                                                ?>
                                             </font>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td height="17" class="ficha_texto_campo">
                                             <font color="#FF3333">
+                                                <?php echo '®&nbsp;' . $animalDetails[$depsMap['dframe']['3']] . '%'; ?>
                                             </font>
                                         </td>
                                     </tr>
@@ -1115,18 +1282,25 @@ function convertPercentageToDecimal($percentage)
                                         <td class="ficha_cabecalho_campo">MGTe_CR</td>
                                     </tr>
                                     <tr>
-                                        <td height="17" class="ficha_texto_campo">18.15 &nbsp;</td>
+                                        <td height="17" class="ficha_texto_campo">
+                                            <?php echo $animalDetails[$depsMap['mgte_cr']['1']]; ?>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td height="17" class="ficha_texto_campo">
                                             <font color="#0066CC">
-                                                @&nbsp;25 </font>
+                                                <?php
+                                                $acc = convertPercentageToDecimal($animalDetails[$depsMap['mgte_cr']['2']]);
+                                                echo '@&nbsp;' . $acc;
+                                                ?>
+                                            </font>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td height="17" class="ficha_texto_campo">
                                             <font color="#FF3333">
-                                                ®&nbsp;16% </font>
+                                                <?php echo '®&nbsp;' . $animalDetails[$depsMap['mgte_cr']['3']] . '%'; ?>
+                                            </font>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -1139,18 +1313,25 @@ function convertPercentageToDecimal($percentage)
                                         <td class="ficha_cabecalho_campo">MGTe_RE</td>
                                     </tr>
                                     <tr>
-                                        <td height="17" class="ficha_texto_campo">16.73 &nbsp;</td>
+                                        <td height="17" class="ficha_texto_campo">
+                                            <?php echo $animalDetails[$depsMap['mgte_re']['1']]; ?>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td height="17" class="ficha_texto_campo">
                                             <font color="#0066CC">
-                                                @&nbsp;28 </font>
+                                                <?php
+                                                $acc = convertPercentageToDecimal($animalDetails[$depsMap['mgte_re']['2']]);
+                                                echo '@&nbsp;' . $acc;
+                                                ?>
+                                            </font>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td height="17" class="ficha_texto_campo">
                                             <font color="#FF3333">
-                                                ®&nbsp;11% </font>
+                                                <?php echo '®&nbsp;' . $animalDetails[$depsMap['mgte_re']['3']] . '%'; ?>
+                                            </font>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -1163,18 +1344,25 @@ function convertPercentageToDecimal($percentage)
                                         <td class="ficha_cabecalho_campo">MGTe_CO</td>
                                     </tr>
                                     <tr>
-                                        <td height="17" class="ficha_texto_campo">4.57 &nbsp;</td>
+                                        <td height="17" class="ficha_texto_campo">
+                                            <?php echo $animalDetails[$depsMap['mgte_co']['1']]; ?>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td height="17" class="ficha_texto_campo">
                                             <font color="#0066CC">
-                                                @&nbsp;20 </font>
+                                                <?php
+                                                $acc = convertPercentageToDecimal($animalDetails[$depsMap['mgte_co']['2']]);
+                                                echo '@&nbsp;' . $acc;
+                                                ?>
+                                            </font>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td height="17" class="ficha_texto_campo">
                                             <font color="#FF3333">
-                                                ®&nbsp;11% </font>
+                                                <?php echo '®&nbsp;' . $animalDetails[$depsMap['mgte_co']['3']] . '%'; ?>
+                                            </font>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -1187,18 +1375,25 @@ function convertPercentageToDecimal($percentage)
                                         <td class="ficha_cabecalho_campo">MGTe_F1</td>
                                     </tr>
                                     <tr>
-                                        <td height="17" class="ficha_texto_campo">3.67 &nbsp;</td>
+                                        <td height="17" class="ficha_texto_campo">
+                                            <?php echo $animalDetails[$depsMap['mgte_f1']['1']]; ?>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td height="17" class="ficha_texto_campo">
                                             <font color="#0066CC">
-                                                @&nbsp;20 </font>
+                                                <?php
+                                                $acc = convertPercentageToDecimal($animalDetails[$depsMap['mgte_f1']['2']]);
+                                                echo '@&nbsp;' . $acc;
+                                                ?>
+                                            </font>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td height="17" class="ficha_texto_campo">
                                             <font color="#FF3333">
-                                                ®&nbsp;14% </font>
+                                                <?php echo '®&nbsp;' . $animalDetails[$depsMap['mgte_f1']['3']] . '%'; ?>
+                                            </font>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -1462,7 +1657,7 @@ function convertPercentageToDecimal($percentage)
         <tr>
             <td bgcolor="#006699">
                 <div align="center">
-                    <font color="#FFFFFF">Genealogia</font>
+                    <font color="#FFFFFF" size='-2'>Genealogia</font>
                 </div>
             </td>
         </tr>
@@ -1593,7 +1788,7 @@ function convertPercentageToDecimal($percentage)
         <tr>
             <td bgcolor="#006699">
                 <div align="center">
-                    <font color="#FFFFFF">DEPs Gráficas</font>
+                    <font color="#FFFFFF" size='-2'>DEPs Gráficas</font>
                 </div>
             </td>
         </tr>
@@ -1621,4 +1816,11 @@ function convertPercentageToDecimal($percentage)
 </table>
 </div>
 </div>
+</div>
+<div class="row justify-content-b">
+    <div class="col-10">
+    </div>
+    <div class="col-2">
+        <a href="consulta-de-touros"> <button type="submit" class="btn btn-primary btn-sm">Nova Consulta</button></a>
+    </div>
 </div>
